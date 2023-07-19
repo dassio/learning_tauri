@@ -19,5 +19,8 @@
 		"typescript": "^5.0.0",
 		"vite": "^4.4.4"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@tauri-apps/api": "^1.4.0"
+	}
 }
