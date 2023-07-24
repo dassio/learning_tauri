@@ -15,8 +15,8 @@ pub fn create_app<R: tauri::Runtime>(builder: tauri::Builder<R>) -> tauri::App<R
 
 #[tauri::command]
 fn greet<R: tauri::Runtime>(name: &str, app_handle: AppHandle<R>) -> String {
-    app_handle.emit_all("new_event", {}).unwrap();
-    
+    app_handle.trigger_global("new_event", Some("test".to_string()));
+
     if name.len() == 0 || name.trim().len() == 0{
         return "please input your name".to_string();
     }
